@@ -1,0 +1,66 @@
+---
+description: Arquitectura Configuration as Code del tema WordPress starter
+alwaysApply: true
+---
+
+# WordPress starter
+
+## Objetivo
+
+Esqueleto vacío (Hello world + shell Barba). Sin CPTs/UI de cliente. Happy path: `wp:start` → `admin:rotate` → **Paso 0 rename** → CaC/UI. Preferir `http://127.0.0.1:8888`. Docs: `docs/AGENT.md`, `docs/DEPLOY.md`.
+
+## Principios
+
+- Configuration as Code en Git (CPT, tax, ACF JSON, templates, componentes, bloques).
+- Cambios pequeños. No frontend estático paralelo. Reutilizar helpers.
+- Prefijo `starter` para rename. No maquetar encima de `starter` sin Paso 0.
+- No portar branding/CPTs de otros clientes.
+- **ACF Pro** es el happy path (Options, Gallery, Repeater…). Free solo emergencia.
+
+## Paso 0 — Rename
+
+Renombrar todo: carpeta tema, text domain, `starter_*` / `STARTER_*`, handles, options slug, `.wp-env`, docs, rules, scripts CSS, `page-transitions.js` markers (`/themes/starter/`, `starter:pageview`). Activar tema + `blogname`. Verificar `rg -i starter`.
+
+## Dónde va cada cosa
+
+| Qué | Dónde |
+|-----|--------|
+| CPT / tax | `inc/post-types/`, `inc/taxonomies/` (autoload) |
+| ACF | `acf-json/` + `inc/acf.php` |
+| Site Settings | Options Page `starter-site-settings` + JSON contacto |
+| Componente | `components/{n}/{n}.php` |
+| Bloque ACF | `blocks/{slug}/{slug}.php` + `inc/blocks.php` |
+| Categoría bloques | slug tema vía `block_categories_all` — **nunca** `category: layout` |
+| Naming bloques | Por composición (`hero`, `media-text`), no por página |
+| Shell Barba | `header.php` / `footer.php` — chrome fuera del container |
+| Túnel | `mu-plugins/tunnel-urls.php` — no `WP_HOME` túnel en `.wp-env` |
+
+## ACF (Pro)
+
+- Labels/instructions = **copy para el cliente**, no tips de maqueta/dev.
+- Seed WP-CLI: mismo shape que el editor (repeaters planos + field keys). Abrir admin y verificar.
+- Repeaters/galerías: `position: normal`. Si sigue en sidebar → user meta `meta-box-order_{cpt}`.
+- Field-heavy sin bloques → classic editor (array en `setup.php`).
+
+## CSS barebones
+
+Tokens mínimos; utilidades en PHP; no purgar mid-discovery. `npm run build:css`.
+
+## JS vendors
+
+- **Barba + page-transitions = global** (default). Evento `starter:pageview` para re-init (guard anti doble-init).
+- Tras leave: colapsar current (`display:none`) para evitar pop-in.
+- GSAP/Swiper = **lazy** (`starter_enqueue_gsap()`). Barba encola GSAP para fades.
+- Prevent Barba: admin bar, `_blank`, download, hash, `/wp-admin`, login, feed, REST.
+
+## Seeds / URLs
+
+Menús y links ACF: paths **root-relative** (`/path/`), nunca absolutos a localhost.
+
+## Día 1 checklist
+
+1. ACF Pro ya está en `wp-content/plugins/advanced-custom-fields-pro/` (incluido en el repo).
+2. `npm run wp:start` — Pro activo, free no.
+3. `npm run admin:rotate`.
+4. Home Hello world + scripts Barba.
+5. Site Settings visible con Pro.

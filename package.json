@@ -1,0 +1,40 @@
+{
+  "name": "raidho-starter-wp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Generic WordPress starter (Configuration as Code).",
+  "scripts": {
+    "dev": "npm run dev:css",
+    "dev:css": "npx @tailwindcss/cli -i ./wp-content/themes/starter/src/input.css -o ./wp-content/themes/starter/assets/css/output.css --watch",
+    "build": "npm run build:css",
+    "build:css": "npx @tailwindcss/cli -i ./wp-content/themes/starter/src/input.css -o ./wp-content/themes/starter/assets/css/output.css",
+    "wp:start": "wp-env start",
+    "wp:stop": "wp-env stop",
+    "wp:destroy": "wp-env destroy",
+    "wp:cli": "wp-env run cli",
+    "pack:site": "bash ./scripts/pack-site.sh",
+    "deploy:ftp": "node ./scripts/deploy-ftp.mjs",
+    "tunnel": "bash ./scripts/tunnel-ngrok.sh",
+    "admin:rotate": "bash ./scripts/rotate-admin-password.sh"
+  },
+  "keywords": [
+    "wordpress",
+    "theme",
+    "tailwind",
+    "starter"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@barba/core": "^2.10.3",
+    "@tailwindcss/cli": "^4.1.11",
+    "@tailwindcss/typography": "^0.5.20",
+    "gsap": "^3.15.0",
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@wordpress/env": "^10.28.0",
+    "basic-ftp": "^5.0.5",
+    "dotenv": "^16.4.7"
+  }
+}

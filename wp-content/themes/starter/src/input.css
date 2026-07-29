@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/*
+  Barebones: add tokens and utilities only as UI appears.
+  Prefer Tailwind classes in PHP. Rebuild with npm run build:css.
+*/
+
+@source "..";
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
+  --container-measure-narrowest: 10em;
+  --container-measure-narrower: 15em;
+  --container-measure-narrow: 20em;
+  --container-measure: 25em;
+  --container-measure-wide: 30em;
+  --container-measure-wider: 35em;
+  --container-measure-widest: 40em;
+}

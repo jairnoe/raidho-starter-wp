@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# WordPress / wp-env local runtime
+.wp-env/
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/cache/
+# Other plugins stay local; ACF Pro is tracked in the repo
+wp-content/plugins/*
+!wp-content/plugins/advanced-custom-fields-pro/
+!wp-content/plugins/advanced-custom-fields-pro/**
+
+# Pack / deploy artifacts (etapa 2)
+dist/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*

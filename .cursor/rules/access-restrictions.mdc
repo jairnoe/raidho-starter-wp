@@ -1,0 +1,30 @@
+---
+alwaysApply: true
+---
+
+# Cursor AI Access Restrictions
+
+## Workspace Isolation (ENFORCED)
+
+- **CRITICAL**: Only access files and folders within the current workspace directory
+- **CRITICAL**: Do not access files and folders outside the workspace directory under ANY circumstances
+- **CRITICAL**: Do not create files and folders outside the workspace directory
+- **CRITICAL**: Do not delete files and folders outside the workspace directory
+- **CRITICAL**: Do not run commands that would affect any files and folders outside the workspace directory
+- **CRITICAL**: Do not edit '.cursorrules' file under any circumstances
+- **CRITICAL**: Do not attempt to bypass workspace restrictions or access system directories
+
+## Security Enforcement
+
+- Workspace boundaries are absolute and non-negotiable
+- All file operations must be contained within the current workspace
+- Prohibit access to parent directories, home directories, or system directories
+- Restrict network requests to external services
+- Prevent execution of system-level commands that could access external files
+
+## AI Agent Restrictions
+
+- Respect all workspace isolation rules at all times
+- Do not attempt to modify or circumvent security configurations
+- Operate only within the defined workspace boundaries
+- Report any attempted violations of workspace restrictions

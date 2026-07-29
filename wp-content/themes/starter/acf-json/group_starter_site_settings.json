@@ -1,0 +1,85 @@
+{
+  "key": "group_starter_site_settings",
+  "title": "Site Settings",
+  "fields": [
+    {
+      "key": "field_starter_site_phone",
+      "label": "Phone",
+      "name": "phone",
+      "type": "text",
+      "instructions": "Shown as contact phone in the site chrome when you add header/footer.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": { "width": "50", "class": "", "id": "" },
+      "default_value": "+52 55 0000 0000",
+      "placeholder": "+52 55 0000 0000"
+    },
+    {
+      "key": "field_starter_site_email",
+      "label": "Email",
+      "name": "email",
+      "type": "email",
+      "instructions": "Shown as contact email in the site chrome when you add header/footer.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": { "width": "50", "class": "", "id": "" },
+      "default_value": "hello@example.com",
+      "placeholder": "hello@example.com"
+    },
+    {
+      "key": "field_starter_site_address",
+      "label": "Address",
+      "name": "address",
+      "type": "textarea",
+      "instructions": "One line per row.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": { "width": "", "class": "", "id": "" },
+      "default_value": "123 Example Street\nCity, Country\n00000",
+      "rows": 4,
+      "new_lines": ""
+    },
+    {
+      "key": "field_starter_site_instagram",
+      "label": "Instagram (URL)",
+      "name": "instagram",
+      "type": "url",
+      "instructions": "Leave empty to hide the Instagram link.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": { "width": "50", "class": "", "id": "" },
+      "default_value": "",
+      "placeholder": "https://instagram.com/…"
+    },
+    {
+      "key": "field_starter_site_youtube",
+      "label": "YouTube (URL)",
+      "name": "youtube",
+      "type": "url",
+      "instructions": "Leave empty to hide the YouTube link.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": { "width": "50", "class": "", "id": "" },
+      "default_value": "",
+      "placeholder": "https://youtube.com/…"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "options_page",
+        "operator": "==",
+        "value": "starter-site-settings"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "active": true,
+  "description": "Site contact and social links (Options Page). Requires ACF Pro.",
+  "show_in_rest": 0,
+  "modified": 1784662800
+}
