@@ -21,6 +21,12 @@ wp-content/plugins/*
 # Pack / deploy artifacts (etapa 2)
 dist/
 
+# Temporary static front used as visual/content reference while porting to WP
+# (see docs/REFERENCE-FRONT.md). Remove when the port is stable.
+frontend/
+reference-front/
+*-front/
+
 # Env / secrets
 .env
 .env.*

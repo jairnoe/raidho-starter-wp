@@ -17,6 +17,7 @@ Preferir **`http://127.0.0.1:8888`** (no `localhost`) — ver [DEPLOY.md](./DEPL
 4. Home: Hello world + Barba en network/scripts.
 5. Admin → Site Settings (Options Page).
 6. Paso 0 rename cuando nombres el sitio.
+7. Si hay front/diseño estático previo → montar referencia y portar: [REFERENCE-FRONT.md](./REFERENCE-FRONT.md).
 
 ---
 
@@ -32,6 +33,21 @@ No dejes restos del prefijo “starter”.
 ```
 
 Verificar: `rg -i starter` (salvo docs históricas).
+
+---
+
+## Front de referencia (port UI)
+
+Si el cliente ya tiene un front estático (Eleventy, HTML, otro repo), **no** reinventes a ojo: monta la carpeta en el mismo workspace y porta con CaC.
+
+Guía completa + prompt plantilla: [REFERENCE-FRONT.md](./REFERENCE-FRONT.md).
+
+Resumen:
+
+1. Paso 0 hecho.
+2. `frontend/` (o similar) en la raíz del repo WP — gitignored por defecto.
+3. Prompt: inventariar → mapa CPT/ACF → chrome → CPT principal → home → seeds.
+4. Al estabilizar: retirar el front; producción = solo WP.
 
 ---
 
@@ -158,4 +174,4 @@ npx wp-env run cli wp rewrite flush --hard
 ```
 
 Local: http://127.0.0.1:8888  
-Docs: [README](../README.md) · [ONBOARDING](./ONBOARDING.md) · [DEPLOY](./DEPLOY.md) · `.cursor/rules/`
+Docs: [README](../README.md) · [ONBOARDING](./ONBOARDING.md) · [REFERENCE-FRONT](./REFERENCE-FRONT.md) · [DEPLOY](./DEPLOY.md) · `.cursor/rules/`

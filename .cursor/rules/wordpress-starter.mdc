@@ -7,12 +7,12 @@ alwaysApply: true
 
 ## Objetivo
 
-Esqueleto vacío (Hello world + shell Barba). Sin CPTs/UI de cliente. Happy path: `wp:start` → `admin:rotate` → **Paso 0 rename** → CaC/UI. Preferir `http://127.0.0.1:8888`. Docs: `docs/AGENT.md`, `docs/DEPLOY.md`.
+Esqueleto vacío (Hello world + shell Barba). Sin CPTs/UI de cliente. Happy path: `wp:start` → `admin:rotate` → **Paso 0 rename** → CaC/UI. Preferir `http://127.0.0.1:8888`. Docs: `docs/ONBOARDING.md`, `docs/AGENT.md`, `docs/REFERENCE-FRONT.md`, `docs/DEPLOY.md`.
 
 ## Principios
 
 - Configuration as Code en Git (CPT, tax, ACF JSON, templates, componentes, bloques).
-- Cambios pequeños. No frontend estático paralelo. Reutilizar helpers.
+- Cambios pequeños. Reutilizar helpers. No frontend estático paralelo **en producción**. Referencia temporal en el mismo workspace: `docs/REFERENCE-FRONT.md` (`frontend/` gitignored).
 - Prefijo `starter` para rename. No maquetar encima de `starter` sin Paso 0.
 - No portar branding/CPTs de otros clientes.
 - **ACF Pro** es el happy path (Options, Gallery, Repeater…). Free solo emergencia.

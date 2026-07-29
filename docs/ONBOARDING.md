@@ -18,6 +18,7 @@ Documentación relacionada:
 |-----|----------|
 | [README.md](../README.md) | Happy path Día 1 |
 | [docs/AGENT.md](./AGENT.md) | Cómo pedir cambios al agente / Paso 0 |
+| [docs/REFERENCE-FRONT.md](./REFERENCE-FRONT.md) | Portar UI desde un front estático (mismo workspace) |
 | [docs/DEPLOY.md](./DEPLOY.md) | Túneles y deploy |
 | `.cursor/rules/` | Reglas del agente en Cursor |
 
@@ -271,6 +272,7 @@ Docker + Node
     → .env + admin:rotate
     → Verificar Hello world + Site Settings
     → Paso 0 rename
+    → (opc) montar frontend/ de referencia — ver REFERENCE-FRONT.md
     → Maquetar: npm run dev:css (otra terminal) para ver cambios CSS
     → Pedir CPTs / ACF / UI / chrome (CaC)
     → (opc) tunnel / deploy

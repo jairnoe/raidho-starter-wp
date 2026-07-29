@@ -21,7 +21,7 @@ npm run admin:rotate   # cambia el password default de wp-env
 1. Verifica **Hello world** + Barba (scripts `barba` / `page-transitions` en la página).  
 2. Admin → **Custom Fields** / **Site Settings** (Options Page Pro).  
 3. **Paso 0:** nombra el sitio → rename completo del tema. Ver [docs/AGENT.md](docs/AGENT.md).  
-4. Pide chrome, CPTs, fields, UI.  
+4. Pide chrome, CPTs, fields, UI. Si hay diseño/front estático previo: [docs/REFERENCE-FRONT.md](docs/REFERENCE-FRONT.md).  
 5. Deploy / túnel = [docs/DEPLOY.md](docs/DEPLOY.md).
 
 Si el puerto 8888 está ocupado: `docker ps` y para el otro `wp-env` (`npm run wp:stop` en ese repo).
@@ -57,5 +57,6 @@ Happy path = **Pro**. Free solo emergencia.
 
 - [docs/ONBOARDING.md](docs/ONBOARDING.md) — guía desde cero (Docker → Día 1)
 - [docs/AGENT.md](docs/AGENT.md) — prompts, Paso 0, ACF, Barba, seeds  
+- [docs/REFERENCE-FRONT.md](docs/REFERENCE-FRONT.md) — portar UI desde un front estático en el mismo workspace  
 - [docs/DEPLOY.md](docs/DEPLOY.md) — túneles + pack  
 - `.cursor/rules/` — reglas del agente
